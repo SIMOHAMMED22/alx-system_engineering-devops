@@ -5,5 +5,5 @@ Write a script that sets the permission to the file hello as follows:
 Owner: no permission at all
 Group: no permission at all
 Other users: all the permissions : chmod 007 hello / Write a script that sets the mode of the file hello : chmod 753 hello / Write a script that sets the mode of the file hello the same as olleh’s mode.: chmod --reference=olleh hello / Create a script that adds execute permission to all subdirectories of the current directory for the owner, the group owner and all other users. :chmod -R ugo+X . / Create a script that creates a directory called my_dir with permissions 751 in the working directory.: mkdir -m 751 my_dir
-/Write a script that changes the group owner to school for the file hello: chgrp school hello
+/Write a script that changes the group owner to school for the file hello: chgrp school hello / Write a script that changes the owner to vincent and the group owner to staff for all the files and directories in the working directory. :chown -R vincent:staff .
   
