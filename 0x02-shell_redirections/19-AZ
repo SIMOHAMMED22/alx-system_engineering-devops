@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Abcdef" | tr 'Ac' 'Ze'
+sed -i 's/A/Z/g; s/c/e/g'
