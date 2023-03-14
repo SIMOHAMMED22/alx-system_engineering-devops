@@ -9,4 +9,4 @@ Write a script that prints the result of the addition of 128 with the value stor
 Write a script that prints the result of POWER divided by DIVIDE, followed by a new line. : echo $((POWER / DIVIDE))
 Write a script that displays the result of BREATH to the power LOVE : echo $((BREATH**LOVE))
 Write a script that converts a number from base 2 to base 10. : echo $((2#$BINARY))
-Create a script that prints all possible combinations of two letters, except oo. : export PATH=$PATH:/action
+Create a script that prints all possible combinations of two letters, except oo. : echo {a..z}{a..z}| tr ' ' '\n' | grep -v 'oo'
