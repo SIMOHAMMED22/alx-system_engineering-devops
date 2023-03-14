@@ -1,2 +1,2 @@
 #!/bin/bash
-sed -n 's/^\(.\).*/\1/p' | tr -d '\n' && echo
+message=""; while read -r line; do message="$message${line:0:1}"; done < input.txt; echo "$message"
