@@ -4,3 +4,4 @@ Add /action to the PATH. /action should be the last directory the shell looks in
 Create a script that counts the number of directories in the PATH.: echo $PASH | tr ":" "\n" | wc -l
 Create a script that lists environment variables. : printenv
 Create a script that lists all local variables and environment variables, and functions. : set
+Create a script that creates a new local variable.: BEST="School"
