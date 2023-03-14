@@ -9,7 +9,8 @@ Replace all characters A and c from input to Z and e respectively . : tr Ac Ze /
 Create a script that removes all letters c and C from input.
 
 Write a script that reverse its input.rev
-Write a script that displays all users and their home directories, sorted by users . : cut -d : -f 1,6 /etc/passwd /Write a command that finds all empty files and directories in the current directory and all sub-directories.: find . -empty -printf "%P\n"
+Write a script that displays all users and their home directories, sorted by users . : cut -d : -f 1,6 /etc/passwd /Write a command that finds all empty files and directories in the current directory and all sub-directories.: find . -empty -printf "%P\n" / Write a command that finds all empty files and directories in the current directory and all sub-directories. : find . -empty \( -type d -o -type f \) -printf '%f\n' 
+Write a script that lists all the files with a .gif extension in the current directory and all its sub-directories.: find . -type f -name '*.gif' -printf '%f\n' | sed 's/\.gif$//' | sort -f
 
 
  
