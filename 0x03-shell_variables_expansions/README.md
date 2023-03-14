@@ -12,3 +12,4 @@ Write a script that converts a number from base 2 to base 10. : echo $((2#$BINAR
 Create a script that prints all possible combinations of two letters, except oo. : echo {a..z}{a..z}| tr ' ' '\n' | grep -v 'oo'
 Write a script that prints a number with two decimal places, followed by a new line. : printf "%.2f\n" $NUM
 Write a script that converts a number from base 10 to base 16. : printf "%x\n" "$DECIMAL"
+Write a script that encodes and decodes text using the rot13 encryption. Assume ASCII. : tr 'A-Za-z' 'N-ZA-Mn-za-m'
