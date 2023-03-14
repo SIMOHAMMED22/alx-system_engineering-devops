@@ -13,3 +13,4 @@ Create a script that prints all possible combinations of two letters, except oo.
 Write a script that prints a number with two decimal places, followed by a new line. : printf "%.2f\n" $NUM
 Write a script that converts a number from base 10 to base 16. : printf "%x\n" "$DECIMAL"
 Write a script that encodes and decodes text using the rot13 encryption. Assume ASCII. : tr 'A-Za-z' 'N-ZA-Mn-za-m'
+Write a script that prints every other line from the input, starting with the first line. : paste - - | cut -f1
