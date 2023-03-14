@@ -1,2 +1,2 @@
 #!/bin/bash
-awk '{printf("%s", substr($0, 1, 1))} END {printf("\n")}'
+sed -e 's/\(.\).*/\1/' | tr -d '\n' && echo
