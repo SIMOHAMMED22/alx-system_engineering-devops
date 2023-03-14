@@ -1,3 +1,2 @@
 #!/bin/bash
-cut -c1 | paste -s -d ''
-
+cat | awk '{printf substr($0,1,1)} END {print ""}'
