@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
+# FizzBuzz Let's do some basic maths :)
 
-# Use a for loop to iterate from 1 to 100
-for ((i = 1; i <= 100; i++)); do
-    # Check if the number is a multiple of both 3 and 5
-    if ((i % 3 == 0)) && ((i % 5 == 0)); then
-        echo "FizzBuzz"
-    # Check if the number is a multiple of 3
-    elif ((i % 3 == 0)); then
-        echo "Fizz"
-    # Check if the number is a multiple of 5
-    elif ((i % 5 == 0)); then
-        echo "Buzz"
-    # Otherwise, display the number itself
-    else
-        echo "$i"
-    fi
+n=1
+while ((n <= 100))
+do
+	if ((n % 3 == 0)) && ((n % 5 == 0))
+	then
+		echo "FizzBuzz"
+	elif ((n % 3 == 0))
+	then
+		echo "Fizz"
+	elif ((n % 5 == 0))
+	then
+		echo "Buzz"
+	else
+		echo "$n"
+	fi
+	((n++))
 done
