@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# script to fix nginx server
-rm /etc/nginx/sites-enabled/default
-ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sed -i 's/8080/80/' /etc/nginx/sites-available/default
+# enable the port 80 on nginx and kill nginx
+sudo sed -i "s/sites-enabled/sites-available/" "/etc/nginx/nginx.conf"
+service nginx restart
+pkill -o nginx
