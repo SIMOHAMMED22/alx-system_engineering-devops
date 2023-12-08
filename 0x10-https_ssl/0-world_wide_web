@@ -1,18 +1,17 @@
 #!/usr/bin/env bash
-# Bash script to get subdomain information
+# Display information about subdomains.
 
-get_info() {
-    local full_subdomain="$1"
-    local sub="$2"
-
-    dig "$full_subdomain" | awk -v subdomain="$sub" -F" " '/ANSWER SECTION:/ { getline; print "The subdomain " subdomain " is a " $4 " record and points to " $5 }'
-}
-
-# Check for correct number of arguments
-if [ "$#" -eq 2 ]; then
-    get_info "$2.$1" "$2"
-else
-    for sub in www lb-01 web-01 web-02; do
-        get_info "${sub}.$1" "$sub"
+if [ $# -eq 1 ]; then
+    names='www lb-01 web-01 web-02'
+    for name in $names
+    do
+        CMD=$(dig $name.$1 | grep -A1 'ANSWER SECTION:' |tail -1)
+        echo -n "The subdomain $name is a "
+        echo -e ${CMD} | awk -F' ' '{print $4,"record and points to",$5}'
     done
+
+else
+    CMD=$(dig $2.$1 | grep -A1 'ANSWER SECTION:' |tail -1)
+    echo -n "The subdomain $2 is a "
+    echo -e ${CMD} | awk -F' ' '{print $4,"record and points to",$5}'
 fi
