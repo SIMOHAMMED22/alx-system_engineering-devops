@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Change Nginx user to nginx in the configuration file
 sed -i 's/^user .*;/user nginx;/' /etc/nginx/nginx.conf
