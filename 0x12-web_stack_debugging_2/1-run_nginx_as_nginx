@@ -1,18 +1,7 @@
 #!/usr/bin/env bash
-
-# Change Nginx user to nginx in the configuration file
-sed -i 's/^user .*;/user nginx;/' /etc/nginx/nginx.conf
-
-# Modify the default Nginx server block to listen on port 8080 for all IPs
-cat <<EOF > /etc/nginx/sites-available/default
-server {
-    listen 8080 default_server;
-    listen [::]:8080 default_server;
-
-    # Other configuration directives...
-    # (Add any other necessary configuration here)
-}
-EOF
-
-# Restart Nginx to apply changes
-service nginx restart
+# Running Nginx as an nginx User.
+sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+chmod 644 /etc/nginx/nginx.conf
+pkill apache2
+sudo -u nginx service nginx start
