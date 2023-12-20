@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+sed -i 's/^user .*;/user nginx/' /etc/nginx/nginx.conf
+echo -e "server {\n    listen 8080 default_server;\n    listen [::]:8080 default_server;\n}" > /etc/nginx/sites-available/default
+service nginx restart
